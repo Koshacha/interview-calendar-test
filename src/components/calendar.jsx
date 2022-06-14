@@ -285,8 +285,9 @@ const Calendar = () => {
     const week = daysOfWeek(currentDate);
     const firstDay = week[0];
     const lastDay = week[6];
+    console.log(firstDay);
     const pageTasks = tasks.filter((el) => {
-      return el.timestamp >= firstDay.getTime() && el.timestamp <= lastDay.getTime();
+      return el.timestamp >= firstDay.getTime() && el.timestamp <= lastDay.getTime() + (24 * 60 * 60 * 1000);
     });
     setPageTasks(pageTasks);
     setSelectedTask(false);
